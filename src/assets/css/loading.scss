@@ -1,0 +1,26 @@
+/*加载*/
+.loader.is-active { width: 100%; height: 100%; position: fixed; top: 0;bottom: 0;left: 0;right: 0; z-index: 999; background: #fff;}
+.loader:after, .loader:before {box-sizing: border-box; } 
+.loader-ball:before {content: ''; position: absolute; width: 50px; height: 50px; top: 50%; left: 50%; margin: -25px 0 0 -25px; background-color: #20a0ff; background-image: -moz-linear-gradient(top, #93cbf6, #20a0ff);
+  background-image: -ms-linear-gradient(top, #93cbf6, #20a0ff); background-image: -o-linear-gradient(top, #93cbf6, #20a0ff);  background-image: linear-gradient(to bottom, #93cbf6, #20a0ff);   background-image: -webkit-linear-gradient(top, #93cbf6, #20a0ff); border-radius: 50%; z-index: 1; animation: kick 1s infinite alternate ease-in both; } 
+.loader-ball:after {content: ''; position: absolute; background-color: rgba(0,0,0,0.3); border-radius: 50%; width: 45px; height: 20px; top: calc(50% + 10px); left: 50%; margin: 0 0 0 -22.5px; z-index: 0; animation: shadow 1s infinite alternate ease-out both; }
+@keyframes kick {
+    0% {
+        transform: translateY(-80px) scaleX(0.95)
+    }
+
+    90% {
+        border-radius: 50%
+    }
+
+    100% {
+        transform: translateY(0) scaleX(1);
+        border-radius: 50% 50% 20% 20%
+    }
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.9s
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0
+}

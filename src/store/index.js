@@ -7,6 +7,7 @@ import mutations from './mutations'
 // import mutations from './modules/mutations'
 import home   from './modules/home'
 import detail from './modules/detail'
+import com from './modules/com'
 
 const state = {
   currentThreadID: null
@@ -15,7 +16,8 @@ const state = {
 let store =  new Vuex.Store({
    modules:{
 	detail,
-	home
+	home,
+	com
    },
 	actions,
 	getters,

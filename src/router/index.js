@@ -1,26 +1,27 @@
-import Vue from 'vue'
+import Vue       from 'vue'
 import VueRouter from 'vue-router'
-import Hello from '@/components/Hello'
-import Home from '@/views/home'
-import Detail from '@/views/details'
-
+import Hello     from '@/components/Hello'
+import Home      from '@/views/home'
+import Detail    from '@/views/details'
+import App       from '../App'
 Vue.use(VueRouter)
 const routes= [
 	{ 
 		path: "/", 
-		redirect: "/home" 
-	},//重定向,指向了home组件  
-	{  
-      name:"home",
-      path: "/home", 
-      component: Home
-  },
-  {  
-  		name:"detail",
-      path: "/detail/:id", 
-      component: Detail
-  }
-
+		component:App,
+    children:[
+      {
+        name:"home",
+        path: "/home", 
+        component: Home
+      },
+      {  
+        name:"detail",
+        path: "/detail/:id", 
+        component: Detail
+      }
+    ]
+	}
 ]
 
 const router = new VueRouter({

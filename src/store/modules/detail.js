@@ -28,18 +28,24 @@ const state = {
 }
 const actions = {
 	getDetailDate:({commit},gid)=>{
+    commit('loadingStatus',true);
 	  api.api_getDetailDate(function(messages){
 	    commit("DetailDate",messages);
 	    commit("SpecDate",messages);
+      commit('loadingStatus',false);
 	  },gid);
 	},
 	getComment:({commit},gid)=>{
+    commit('loadingStatus',true);
 	  api.api_getComment(function(messages){
 	  	if(messages.length === 0){
 	  		 commit("NoComdate")
+         commit('loadingStatus',false);
 	  	}else{
 	  		commit("CommentDate",messages)
+        commit('loadingStatus',false);
 	  	}
+
 	  },gid);
 	},
 	clickHandler:({commit},ds)=>{

@@ -9,17 +9,21 @@ const state = {
 }
 const actions = {
 	getHomeDate:({commit})=>{
+		commit('loadingStatus',true);
 		api.api_getHomeDate(function(messages){
 			commit("bannerDate",messages[0]);  //数组0是banner的数据
 			commit("articleDate",messages[1]);   // 1是文章
 			commit("actDate",messages[3]); // 3是活动图
+			commit('loadingStatus',false);
 		});
 	},
 	getRecommendDatas:({commit})=>{
+		commit('loadingStatus',true);
 		api.api_getRecommendData(function(messages){
 			commit("RecommendData",messages[0].newRecommend);
 			commit("hotRecommendData",messages[1].hotRecommend);
 			commit("categoryRecommendData",messages[2]);
+			commit('loadingStatus',false);
 		}) 
 	}
 }

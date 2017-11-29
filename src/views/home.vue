@@ -17,14 +17,15 @@
 	         </div>
 	       </div>
     	</div>
-    	<section id="free_goods " class="ZMSP_1">
+<!--     	<section id="free_goods " class="ZMSP_1">
 			    <div class="ZMSP_Title">限时特惠</div>
 			      <div class="banbox" v-for="item in actPic"><img :src="'http://www.lamezhi.com/'+item.ad_logo" :alt="item.ad_name"></div>
-			</section>
+		</section> -->
 			<product :parentData='commend'></product>
 			<recomm :parentData='HotRecommend'></recomm>
 			<productlist :parentData='CategoryRecommend'></productlist>
-      <food></food> 
+			
+      <!-- <food></food>  -->
   </div>
 </template>
 <script>
@@ -34,7 +35,7 @@ import '../assets/css/swiper-3.4.2.min.css'
 import product from '../components/product'
 import recomm from '../components/recomm'
 import productlist from '../components/product_list'
-import food from '../components/fooder'
+// import food from '../components/fooder'
 export default{
  	name:'home',
  	data(){
@@ -63,8 +64,7 @@ export default{
  		swiperSlide,
  		product,
  		recomm,
- 		productlist,
- 		food
+ 		productlist
  	},
  	created(){
  		window.addEventListener('touchstart',function(){},false);

@@ -46,7 +46,7 @@
       </div>
 
       <div class="payCartBox">
-          <span class="addCartBut" >立即购买</span>
+          <span class="addCartBut" @click="showSpec">立即购买</span>
           <span class="payBut"  >加入购物车</span>
       </div>
     </div>
