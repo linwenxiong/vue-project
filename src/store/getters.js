@@ -1,1 +1,0 @@
-export const currentThreadID = state => state.currentThreadID;

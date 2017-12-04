@@ -3,12 +3,15 @@ import VueRouter from 'vue-router'
 import Hello     from '@/components/Hello'
 import Home      from '@/views/home'
 import Detail    from '@/views/details'
+import Category  from '@/views/category'
+
 import App       from '../App'
 Vue.use(VueRouter)
 const routes= [
 	{ 
 		path: "/", 
 		component:App,
+    redirect:'/home',
     children:[
       {
         name:"home",
@@ -19,6 +22,11 @@ const routes= [
         name:"detail",
         path: "/detail/:id", 
         component: Detail
+      },
+      {
+        name:"category",
+        path: "/category", 
+        component: Category
       }
     ]
 	}

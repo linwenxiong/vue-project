@@ -270,6 +270,14 @@ section .bd::after {
   flex: 1;
   font-size: 18px;
 }
+.categoryBox{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
 .category-title {
   text-align: center;
   font-size: 17px;
@@ -812,9 +820,10 @@ margin-top: 10px;
   text-align: center;
   height: 100%;
 }
-.router-link-exact-active{
-  color: #b3272d !important;
+.router-link-active{
+  // color: #b3272d !important;
 }
+
 .selected-menu .icon-home {
     background-position: 0 -0.22222222222222rem;
 }
@@ -855,4 +864,27 @@ span[class^=icon-] {
 }
 .ZMSP_1 {
   border-bottom: 10px solid #f5f5f5;
+}
+.banner_box .swiper-slide{
+  height: 1.768rem;
+  background: #cfcfcf;
+}
+.banner-img{
+  background-color: hsla(0,0%,71%,.2);
+}
+
+.leftSwiper-enter-active,.leftSwiper-leave-active{
+  transition: all 0.2s;
+}
+.leftSwiper-enter-active{
+    /*（显示）*/
+    opacity: 1;
+}
+.leftSwiper-leave-active{
+    /*（消失）*/
+     opacity: 0;
+}
+.leftSwiper-enter,.leftSwiper-leave{
+    /*初始状态*/
+     opacity: 0;
 }

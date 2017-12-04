@@ -1,8 +1,8 @@
 <template>
     <div class="home">
-      <swiper :options="swiperOption" ref="mySwiper">
+      <swiper :options="swiperOption" ref="mySwiper" class="banner_box">
          <swiper-slide v-for="item in bannerDate">
-         	<router-link :to="{name:'detail',params:{id:item.ad_id}}"><img width="100%" :src="'http://www.lamezhi.com/'+item.ad_logo" :alt="item.ad_name"></router-link>
+         	<router-link :to="{name:'detail',params:{id:item.ad_id}}" ><img class="banner-img" width="100%" :src="'http://www.lamezhi.com/'+item.ad_logo" :alt="item.ad_name"></router-link>
          </swiper-slide>
          <div class="swiper-pagination"  slot="pagination"></div>
       </swiper>
@@ -12,8 +12,8 @@
 	       <div class="text-box">
 	          <div class="slidebox" id="slidebox">
 	          	<swiper :options="{autoplay: 3000, direction: 'vertical',loop : true,height:33}" ref="Swiper">
-				      	<swiper-slide v-for="item in articleDate" class="MswiperSlide">{{item.title}}</swiper-slide>
-				      </swiper>
+				   <swiper-slide v-for="item in articleDate" class="MswiperSlide">{{item.title}}</swiper-slide>
+				</swiper>
 	         </div>
 	       </div>
     	</div>
@@ -25,7 +25,7 @@
 			<recomm :parentData='HotRecommend'></recomm>
 			<productlist :parentData='CategoryRecommend'></productlist>
 			
-      <!-- <food></food>  -->
+      <food></food> 
   </div>
 </template>
 <script>
@@ -35,7 +35,7 @@ import '../assets/css/swiper-3.4.2.min.css'
 import product from '../components/product'
 import recomm from '../components/recomm'
 import productlist from '../components/product_list'
-// import food from '../components/fooder'
+import food from '../components/fooder'
 export default{
  	name:'home',
  	data(){
@@ -48,7 +48,7 @@ export default{
  		}
  	},
  	methods:{
- 		...mapActions(['getAllMessages'])
+ 		// ...mapActions([''])
  	},
  	computed:mapGetters([
  		'currentThreadID',
@@ -64,7 +64,8 @@ export default{
  		swiperSlide,
  		product,
  		recomm,
- 		productlist
+ 		productlist,
+ 		food
  	},
  	created(){
  		window.addEventListener('touchstart',function(){},false);
